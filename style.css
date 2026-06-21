@@ -1,0 +1,681 @@
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+height:100%;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+background:#7b0014;
+}
+
+body{
+position:relative;
+}
+
+/* PAGE COMMON */
+
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+top:0;
+left:0;
+display:flex;
+opacity:0;
+visibility:hidden;
+pointer-events:none;
+justify-content:center;
+align-items:center;
+background:#7b0014;
+transition:1s ease;
+overflow:hidden;
+}
+
+.page.active{
+
+opacity:1;
+z-index:10;
+visibility:visible;
+pointer-events:auto;
+}
+
+/* PAGE 1 */
+
+.welcome-container{
+width:90%;
+max-width:1200px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:60px;
+}
+
+.polaroid{
+background:white;
+padding:15px;
+width:320px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transform:rotate(-3deg);
+}
+
+.polaroid img{
+width:100%;
+height:380px;
+object-fit:cover;
+display:block;
+}
+
+.polaroid p{
+text-align:center;
+margin-top:12px;
+font-family:'Great Vibes',cursive;
+font-size:28px;
+color:#7b0014;
+}
+
+.password-box{
+text-align:center;
+color:white;
+}
+
+.password-box h3{
+letter-spacing:3px;
+margin-bottom:25px;
+font-weight:400;
+}
+
+#passwordDisplay{
+width:220px;
+height:45px;
+margin:auto;
+border:2px solid rgba(255,255,255,.3);
+border-radius:8px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+letter-spacing:10px;
+margin-bottom:25px;
+background:rgba(255,255,255,.08);
+}
+
+.keypad{
+display:grid;
+grid-template-columns:repeat(3,70px);
+gap:12px;
+justify-content:center;
+}
+
+.keypad button{
+height:60px;
+border:none;
+border-radius:50%;
+background:rgba(255,255,255,.12);
+color:white;
+font-size:20px;
+cursor:pointer;
+transition:.3s;
+}
+
+.keypad button:hover{
+background:white;
+color:#7b0014;
+transform:scale(1.08);
+}
+
+.arrow-btn{
+background:#ffd93d !important;
+color:#7b0014 !important;
+font-weight:bold;
+}
+
+/* PAGE 2 */
+
+.date-container{
+text-align:center;
+position:relative;
+}
+
+.birthday-date{
+font-size:90px;
+font-weight:700;
+color:#ffe4a6;
+text-shadow:
+0 0 10px #ffd76d,
+0 0 20px #ffd76d,
+0 0 40px #ffd76d;
+animation:glowDate 2s infinite alternate;
+z-index:2;
+position:relative;
+}
+
+@keyframes glowDate{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.04);
+}
+}
+
+.sparkles{
+position:absolute;
+width:450px;
+height:450px;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+border-radius:50%;
+background:
+radial-gradient(circle,#ffffff 2px,transparent 2px);
+background-size:70px 70px;
+animation:sparkRotate 15s linear infinite;
+opacity:.18;
+}
+
+@keyframes sparkRotate{
+100%{
+transform:translate(-50%,-50%) rotate(360deg);
+}
+}
+
+/* PAGE 3 */
+
+.white-page{
+background:white;
+}
+
+.loading-container{
+text-align:center;
+}
+
+.hey-girl{
+font-family:'Great Vibes',cursive;
+font-size:60px;
+color:#7b0014;
+margin-bottom:25px;
+}
+
+.cake-bounce{
+font-size:80px;
+animation:bounceCake 1s infinite;
+}
+
+@keyframes bounceCake{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-25px);
+}
+}
+
+.loading-text{
+margin-top:20px;
+color:#444;
+font-weight:500;
+}
+
+.loader{
+width:90px;
+height:90px;
+border:8px solid #eee;
+border-top:8px solid #7b0014;
+border-radius:50%;
+margin:30px auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+/* PAGE 4 */
+
+.gift-card{
+background:#fffaf0;
+width:420px;
+height:520px;
+border-radius:12px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.gift-title{
+font-family:'Great Vibes',cursive;
+font-size:52px;
+color:#7b0014;
+margin-bottom:40px;
+}
+
+.gift-envelope{
+position:relative;
+width:220px;
+height:150px;
+}
+
+.envelope-bottom{
+position:absolute;
+width:100%;
+height:100%;
+background:#8f0017;
+bottom:0;
+}
+
+.envelope-top{
+position:absolute;
+width:0;
+height:0;
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-top:80px solid #650012;
+top:0;
+z-index:3;
+}
+
+.gift-letter{
+position:absolute;
+width:170px;
+height:110px;
+background:white;
+left:25px;
+top:-20px;
+border-radius:5px;
+animation:letterPop 2s infinite;
+}
+
+@keyframes letterPop{
+50%{
+transform:translateY(-20px);
+}
+}
+
+/* PAGE 5 */
+
+.friendship-bg{
+position:absolute;
+width:100%;
+height:100%;
+}
+
+.friendship-bg img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:#000;
+}
+.friendship-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px;
+text-align:center;
+color:white;
+}
+
+.friendship-overlay h1{
+font-family:'Great Vibes',cursive;
+font-size:80px;
+margin-bottom:20px;
+}
+
+.friendship-overlay p{
+max-width:900px;
+line-height:1.9;
+font-size:20px;
+}
+
+.friendship-message{
+margin-top:20px;
+}
+
+#letterBtn{
+margin-top:40px;
+padding:16px 35px;
+border:none;
+border-radius:50px;
+background:#ffd93d;
+font-size:18px;
+cursor:pointer;
+font-weight:600;
+}
+
+/* PAGE 6 */
+
+.letter-page{
+background:#8a0017;
+}
+
+.letter-wrapper{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:60px;
+width:95%;
+}
+
+.letter-paper{
+background:#fff8e8;
+width:700px;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.letter-paper h1{
+font-family:'Great Vibes',cursive;
+font-size:65px;
+color:#7b0014;
+text-align:center;
+margin-bottom:20px;
+}
+
+.letter-content{
+max-height:70vh;
+overflow:auto;
+padding-right:10px;
+}
+
+.letter-content p{
+margin-bottom:15px;
+line-height:1.8;
+color:#333;
+}
+
+.letter-photos{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.letter-photos img{
+width:220px;
+height:190px;
+object-fit:contain;
+background:white;
+padding:8px;
+border:6px solid white;
+box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+
+/* PAGE 7 */
+
+.pink-background{
+width:100%;
+height:100%;
+background:#e7b6bf;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.cake-stage{
+position:relative;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+#wishText{
+font-family:'Great Vibes',cursive;
+font-size:55px;
+margin-bottom:40px;
+color:white;
+opacity:0;
+}
+
+.cake{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.candles{
+display:flex;
+gap:18px;
+margin-bottom:6px;
+}
+
+.candle{
+width:12px;
+height:40px;
+background:#ffe9a3;
+position:relative;
+}
+
+.flame{
+position:absolute;
+width:12px;
+height:18px;
+background:orange;
+border-radius:50%;
+top:-18px;
+left:0;
+animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+from{
+transform:scale(.8);
+}
+to{
+transform:scale(1.1);
+}
+}
+@keyframes blowWind{
+
+0%{
+transform:translateX(0);
+opacity:1;
+}
+
+100%{
+transform:translateX(40px);
+opacity:0;
+}
+
+}
+
+.cake-body{
+width:190px;
+height:110px;
+background:#fff2b6;
+border-radius:12px;
+}
+#countdown{
+position:absolute;
+font-size:150px;
+font-weight:bold;
+color:white;
+z-index:999;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+.flame{
+transition:1s;
+}
+
+
+
+#birthdayBurst{
+display:none;
+font-size:60px;
+font-family:'Great Vibes',cursive;
+color:#fff5b1;
+text-align:center;
+margin-top:25px;
+}
+
+/* PAGE 8 */
+
+.final-screen{
+width:100%;
+height:100%;
+background:#efb6c6;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+overflow:hidden;
+}
+
+.final-screen h1{
+font-family:'Great Vibes',cursive;
+font-size:85px;
+margin-top:35px;
+color:#7b0014;
+}
+
+.final-screen p{
+font-size:24px;
+margin-top:10px;
+color:#7b0014;
+}
+
+.final-cake{
+display:flex;
+flex-direction:column;
+align-items:center;
+z-index:2;
+}
+
+/* FIREWORKS */
+
+#fireworks-container{
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:999;
+}
+
+.firework{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+background:white;
+animation:explode 1.5s linear forwards;
+}
+
+@keyframes explode{
+0%{
+transform:scale(0);
+opacity:1;
+}
+100%{
+transform:scale(15);
+opacity:0;
+}
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.welcome-container{
+flex-direction:column;
+padding-top:30px;
+gap:30px;
+}
+
+.polaroid{
+width:260px;
+}
+
+.polaroid img{
+height:300px;
+}
+
+.birthday-date{
+font-size:55px;
+}
+
+.friendship-overlay h1{
+font-size:50px;
+}
+
+.friendship-overlay p{
+font-size:16px;
+}
+
+.letter-wrapper{
+flex-direction:column;
+overflow:auto;
+padding:20px;
+}
+
+.letter-paper{
+width:100%;
+}
+
+.letter-photos{
+flex-direction:row;
+}
+
+.letter-photos img{
+width:120px;
+height:120px;
+}
+
+.final-screen h1{
+font-size:55px;
+}
+
+#countdown{
+font-size:90px;
+}
+
+}
+
+.loading-bar{
+width:350px;
+height:18px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+margin:25px auto;
+}
+
+.loading-progress{
+width:0%;
+height:100%;
+background:#7b0014;
+animation:loadingFill 5s linear forwards;
+}
+
+.loading-percent{
+font-size:18px;
+font-weight:600;
+color:#7b0014;
+}
+
+@keyframes loadingFill{
+from{
+width:0%;
+}
+to{
+width:100%;
+}
+}
+.friendship-message{
+max-width:800px;
+margin:auto;
+}
